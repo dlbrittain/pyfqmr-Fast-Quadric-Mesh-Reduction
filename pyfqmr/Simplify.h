@@ -336,12 +336,12 @@ namespace Simplify
   // Main simplification function
   //
   // target_count  : target nr. of triangles
-  // agressiveness : sharpness to increase the threshold.
+  // aggressiveness : sharpness to increase the threshold.
   //                 5..8 are good numbers
   //                 more iterations yield higher quality
   //
 
-  void simplify_mesh(int target_count, int update_rate=5, double agressiveness=7, 
+  void simplify_mesh(int target_count, int update_rate=5, double aggressiveness=7, 
                      bool verbose=false, int max_iterations=100, double alpha = 0.000000001, 
                      int K = 3, bool lossless=false, double threshold_lossless = 0.0001,
                      bool preserve_border = false)
@@ -377,7 +377,7 @@ namespace Simplify
       // The following numbers works well for most models.
       // If it does not, try to adjust the 3 parameters
       //
-      double threshold = alpha*pow(double(iteration+K),agressiveness);
+      double threshold = alpha*pow(double(iteration+K),aggressiveness);
       if(lossless) threshold = threshold_lossless ;
 
       // target number of triangles reached ? Then break
